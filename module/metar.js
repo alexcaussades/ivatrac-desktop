@@ -27,9 +27,9 @@ function getMetar(metar) {
         document.getElementById("airport").innerHTML = `Airport : ${res.data.airportIcao}`;
         document.getElementById("metar_return").innerHTML = `METAR : ${res.data.metar}`;
         const time = new Date();
-        console.log(time.toISOString());
+        //console.log(time.toISOString());
         const timeivao = new Date(res.data.updatedAt);
-        console.log(timeivao.toISOString());
+        //console.log(timeivao.toISOString());
         
 
         // calculate the time difference between the two dates and display it
