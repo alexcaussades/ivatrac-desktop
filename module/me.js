@@ -1,9 +1,9 @@
 const axios = require('axios');
 const fs = require('fs');
-const token = require('../token.json');
+const token = require("../files_system.js");
 
-
-const access_token = token.access_token;
+const get_token = fs.readFileSync(token.files_ivatac() + "/token.json", 'utf8');
+const access_token = JSON.parse(get_token).access_token;
 
 
 document.getElementById('me').addEventListener('click', me);
