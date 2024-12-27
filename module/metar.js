@@ -2,11 +2,6 @@ const { shell, ipcRenderer } = require('electron');
 const axios = require('axios');
 const token = require("../files_system.js");
 const fs = require('fs');
-
-
-
-
-
 const get_token = fs.readFileSync(token.files_ivatac() + "/token.json", 'utf8');
 const access_token = JSON.parse(get_token).access_token;
 

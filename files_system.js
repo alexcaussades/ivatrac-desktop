@@ -102,6 +102,10 @@ const files_ivatac = () => {
     return  os.homedir() + '\\AppData\\Roaming\\ivatac_desktop';
 }
 
+const data_ivatac = () => {
+    return files_ivatac() + '\\data\\data.json';
+}
+
 const files_ivatac_token = () => {
     return files_ivatac() + '/token.json';
 }
