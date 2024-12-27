@@ -1,10 +1,15 @@
 const { shell, ipcRenderer } = require('electron');
 const axios = require('axios');
-const token = require('../token.json');
+const token = require("../files_system.js");
+const fs = require('fs');
 
 
 
-const access_token = token.access_token;
+
+
+const get_token = fs.readFileSync(token.files_ivatac() + "/token.json", 'utf8');
+const access_token = JSON.parse(get_token).access_token;
+
 
 document.getElementById("metar_result").style.display = "none";
 
@@ -27,9 +32,9 @@ function getMetar(metar) {
         document.getElementById("airport").innerHTML = `Airport : ${res.data.airportIcao}`;
         document.getElementById("metar_return").innerHTML = `METAR : ${res.data.metar}`;
         const time = new Date();
-        console.log(time.toISOString());
+        //console.log(time.toISOString());
         const timeivao = new Date(res.data.updatedAt);
-        console.log(timeivao.toISOString());
+        //console.log(timeivao.toISOString());
         
 
         // calculate the time difference between the two dates and display it

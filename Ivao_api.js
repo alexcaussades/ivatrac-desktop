@@ -2,6 +2,9 @@ const axios = require('axios');
 const keys =  require('./data.json');
 const fs = require('fs');
 
+const file_system = require('./files_system.js');  // Importing the file_system module
+
+
 
 const OPENID_URL = 'https://api.ivao.aero/.well-known/openid-configuration';
 
@@ -20,7 +23,11 @@ const getOAuthToken = async () => {
 }
 
 const store = (token) => {
-    fs.writeFile('./token.json', JSON.stringify(token), (err) => {
+    if (!fs.existsSync(file_system.files_ivatac())) {
+        fs.mkdirSync(file_system.files_ivatac());
+    }
+    
+    fs.writeFile( file_system.files_ivatac() + "/token.json", JSON.stringify(token), (err) => {
         if (err) {
             console.error(err);
             return;
@@ -30,7 +37,7 @@ const store = (token) => {
 }
 
 function open_token() {
-    fs.readFile('./token.json', 'utf8', (err, data) => {
+    fs.readFile(file_system.files_ivatac() + "/token.json", 'utf8', (err, data) => {
         if (err) {
             console.error(err);
             return;

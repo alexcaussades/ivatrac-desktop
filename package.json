@@ -3,20 +3,13 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "start": "electron .",
-    "package": "electron-forge package",
-    "make": "electron-forge make",
-    "publish": "electron-forge publish",
-    "hello": "electron-forge start"
+    "start": "electron ."
   },
   "author": "alexandre Caussades",
   "license": "ISC",
   "description": "",
   "devDependencies": {
-    "@electron-forge/cli": "^7.6.0",
-    "@electron-forge/publisher-github": "^7.6.0",
-    "electron": "^33.2.1",
-    "electron-forge": "^0.0.2"
+    "electron": "^33.2.1"
   },
   "dependencies": {
     "axios": "^1.7.9",
