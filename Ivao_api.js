@@ -1,8 +1,21 @@
-const axios = require('axios');
+const { app, BrowserWindow } = require('electron/main');
 const fs = require('fs');
-const file_system = require('./files_system.js');  // Importing the file_system module
-const data1 = file_system.data_ivatac_files(); // Importing the keys from the file_system module
+const file_system = require("./files_system");// Importing the file_system module
+
+if(!fs.existsSync(file_system.data_ivatac_files())) {
+    console.log('File does not exist');
+    
+}else{
+    console.log('File already exists');
+    getOAuthToken();
+}
+
+const axios = require('axios');
 const keys = require(data1); // Importing the keys from the file_system module
+
+
+
+//const keys = require(data1); // Importing the keys from the file_system module
 
 
 const OPENID_URL = 'https://api.ivao.aero/.well-known/openid-configuration';
@@ -46,9 +59,6 @@ function open_token() {
         return token.access_token;
     });
 }
-
-
-getOAuthToken();
 
 module.exports = {
     open_token

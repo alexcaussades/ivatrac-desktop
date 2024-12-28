@@ -22,7 +22,7 @@ function createWindow () {
   })
 
  
-    win.loadFile('./template/data.html')
+    win.loadFile('../template/data.html')
   
 }
 
