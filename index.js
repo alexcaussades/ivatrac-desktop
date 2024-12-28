@@ -5,6 +5,8 @@ const { webContents } = require('electron')
 const data_account_dev = require('./module/data_account_dev')
 const fs = require('fs')
 
+
+
 function createWindow () {
   const win = new BrowserWindow({
     width: 800,

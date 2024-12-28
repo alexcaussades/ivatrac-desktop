@@ -17,6 +17,9 @@
             <div class="col-md-12 bg-dark text-white p-3">
                 <h1>IVATRAC</h1>
                 <p> The navigation from IVAO </p>
+                <div>
+                    Version: <span id="version"></span> [<span id="type"></span>]
+                </div>
             </div>
         </div>
     </div>
@@ -53,3 +56,9 @@
 
 </body>
 </html>
+
+<script>
+    const package = require('./package.json');
+    document.getElementById('version').innerText = package.version;
+    document.getElementById('type').innerText = package.versionName;
+</script>
