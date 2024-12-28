@@ -1,8 +1,8 @@
 const { app, BrowserWindow } = require('electron/main')
 const path = require('node:path')
-const Ivao_api = require('./Ivao_api')
 const { webContents } = require('electron')
 const data_account_dev = require('./module/data_account_dev')
+const files_system = require('./files_system')
 const fs = require('fs')
 
 
@@ -22,12 +22,14 @@ function createWindow () {
             
     }
   })
-
-  if (!fs.existsSync(data_account_dev.opendata()) == undefined) {
-    win.loadFile('data.html')
+  if (!fs.existsSync(files_system.data_ivatac())) {
+    fs.mkdirSync(files_system.data_ivatac());
+    if (!fs.existsSync(files_system.data_ivatac_files())) {
+      win.loadFile("./template/data.html")
+    }    
+  }else{
+    win.loadFile('index.html')
   }
-
-  win.loadFile('index.html')
 }
 
 

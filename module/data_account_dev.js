@@ -22,7 +22,7 @@ function createWindow () {
   })
 
  
-    win.loadFile('./template/data.html')
+    win.loadFile('../template/data.html')
   
 }
 
@@ -41,9 +41,9 @@ const store_data = (data) => {
 }
 
 const opendata = () => {
-    fs.open(file_system.data_ivatac_files(), 'r', (err, fd) => {
+    fs.open(file_system.data_ivatac(), 'r', (err, fd) => {
         if (err) {
-            if (err.code === 'ENOENT') {
+            if (err === undefined) {
                 console.error('File does not exist');
                 // createWindow(); pour ouvrir la fenetre de configuration de l'application si le fichier n'existe pas
                 // ! fs.existsSync(file_system.data_ivatac()) == undefined
