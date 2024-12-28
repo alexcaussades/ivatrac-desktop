@@ -5,6 +5,7 @@ const file_system = require("./files_system");// Importing the file_system modul
 const axios = require('axios');
 const keys1 = os.homedir() + '\\AppData\\Roaming\\ivatac_desktop\\data\\data.json';
 
+
 fs.readFile(keys1, 'utf8', (err, data) => {
         if (err) {
             console.error(err);
@@ -15,6 +16,10 @@ fs.readFile(keys1, 'utf8', (err, data) => {
         console.log(keys);
         getOAuthToken(keys);
     });
+
+
+//const keys = require(data1); // Importing the keys from the file_system module
+
 
 const OPENID_URL = 'https://api.ivao.aero/.well-known/openid-configuration';
 
@@ -55,9 +60,6 @@ function open_token() {
         return token.access_token;
     });
 }
-
-getOAuthToken();
-
 module.exports = {
     open_token
 }
