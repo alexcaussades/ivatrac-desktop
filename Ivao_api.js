@@ -1,18 +1,21 @@
 const { app, BrowserWindow } = require('electron/main');
 const fs = require('fs');
+const os = require('os');
 const file_system = require("./files_system");// Importing the file_system module
-
-if(!fs.existsSync(file_system.data_ivatac_files())) {
-    console.log('File does not exist');
-    
-}else{
-    console.log('File already exists');
-    getOAuthToken();
-}
-
 const axios = require('axios');
-const keys = require(data1); // Importing the keys from the file_system module
+const keys1 = os.homedir() + '\\AppData\\Roaming\\ivatac_desktop\\data\\data.json';
 
+
+fs.readFile(keys1, 'utf8', (err, data) => {
+        if (err) {
+            console.error(err);
+            return;
+        }
+        // recuperation des keys en json
+        const keys = JSON.parse(data);
+        console.log(keys);
+        getOAuthToken(keys);
+    });
 
 
 //const keys = require(data1); // Importing the keys from the file_system module
@@ -20,9 +23,7 @@ const keys = require(data1); // Importing the keys from the file_system module
 
 const OPENID_URL = 'https://api.ivao.aero/.well-known/openid-configuration';
 
-
-
-const getOAuthToken = async () => {
+const getOAuthToken = async (keys) => {
     const openIdConfig = await axios.get(OPENID_URL).then(res => res.data);
     const token = await axios.post(openIdConfig.token_endpoint, {
         grant_type: 'client_credentials',
@@ -59,7 +60,6 @@ function open_token() {
         return token.access_token;
     });
 }
-
 module.exports = {
     open_token
 }
