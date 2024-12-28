@@ -24,10 +24,10 @@ function createWindow () {
   })
 
   if (!fs.existsSync(data_account_dev.opendata()) == undefined) {
-    win.loadFile('data.html')
+    win.loadFile('./template/data.html')
+  } else {
+    win.loadFile('index.html')
   }
-
-  win.loadFile('index.html')
 }
 
 
