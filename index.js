@@ -2,7 +2,7 @@ const { app, BrowserWindow } = require('electron/main')
 const path = require('node:path')
 const Ivao_api = require('./Ivao_api')
 const { webContents } = require('electron')
-//const data_account_dev = require('./module/data_account_dev')
+const data_account_dev = require('./module/data_account_dev')
 const fs = require('fs')
 
 function createWindow () {
@@ -20,6 +20,11 @@ function createWindow () {
             
     }
   })
+
+  if (!fs.existsSync(data_account_dev.opendata()) == undefined) {
+    win.loadFile('data.html')
+  }
+
   win.loadFile('index.html')
 }
 
