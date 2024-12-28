@@ -5,7 +5,6 @@ const fs = require('fs');
 const get_token = fs.readFileSync(token.files_ivatac() + "/token.json", 'utf8');
 const access_token = JSON.parse(get_token).access_token;
 
-
 document.getElementById("metar_result").style.display = "none";
 
 // Retrieve the METAR for the airport entered by the user
