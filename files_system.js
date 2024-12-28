@@ -101,7 +101,12 @@ const getAppdata = () => {
 const files_ivatac = () => {
     return  os.homedir() + '\\AppData\\Roaming\\ivatac_desktop';
 }
-
+const data_ivatac = () => {
+    return files_ivatac() + '/data';
+}
+const data_ivatac_files = () => {
+    return files_ivatac() + '/data/data.json';
+}
 const files_ivatac_token = () => {
     return files_ivatac() + '/token.json';
 }
@@ -124,7 +129,10 @@ module.exports = {
     getTmpFile,
     getAppdata,
     files_ivatac,
-    files_ivatac_token
+    files_ivatac_token,
+    data_ivatac,
+    data_ivatac_files
+
 }
 
 

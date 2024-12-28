@@ -1,6 +1,9 @@
 const axios = require('axios');
-const keys =  require('./data.json');
+const files_systeme =  require('./files_system');
 const fs = require('fs');
+const file_system = require('./files_system.js');  // Importing the file_system module
+const data1 = file_system.data_ivatac_files(); // Importing the keys from the file_system module
+const keys = require(data1); // Importing the keys from the file_system module
 
 const file_system = require('./files_system.js');  // Importing the file_system module
 
@@ -14,8 +17,8 @@ const getOAuthToken = async () => {
     const openIdConfig = await axios.get(OPENID_URL).then(res => res.data);
     const token = await axios.post(openIdConfig.token_endpoint, {
         grant_type: 'client_credentials',
-        client_id: keys.data["Client_ID"],
-        client_secret: keys.data["Client_Secret"],
+        client_id: keys["Client_ID"],
+        client_secret: keys["Client_Secret"],
         scope: 'friends:read friends:write tracker profile' 
     }).then(res => res.data);
     store(token);

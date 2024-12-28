@@ -1,7 +1,0 @@
-{
-    "data": {
-        "Client_ID": "7239b8da-dc16-4fe8-8ff8-7f18593ef55b",
-        "Client_Secret": "RXn0rc89XHAGyrobzPPlmHJMF5RHVQj1",
-        "Redirect_URI": "http://localhost:8000"
-    }
-}
