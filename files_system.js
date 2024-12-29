@@ -111,6 +111,10 @@ const files_ivatac_token = () => {
     return files_ivatac() + '/token.json';
 }
 
+const account_ivao_files = () => {
+    return files_ivatac() + '\\data\\ivao.json';
+}
+
 
 
 module.exports = {
@@ -131,7 +135,8 @@ module.exports = {
     files_ivatac,
     files_ivatac_token,
     data_ivatac,
-    data_ivatac_files
+    data_ivatac_files,
+    account_ivao_files
 
 }
 

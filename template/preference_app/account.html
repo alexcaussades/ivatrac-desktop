@@ -2,7 +2,7 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <title>IVATRAC Settings</title>
+    <title>IVATRAC Account</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="Content-Security-Policy" content="script-src 'self' 'unsafe-inline';" />
     <!-- install bootstap  -->
@@ -11,6 +11,7 @@
 
 </head>
 <body>
+
     <div class="container">
         <div class="row mt-2 border border-success">
             <div class="col-md-12 bg-dark text-white p-3">
@@ -23,37 +24,39 @@
         </div>
     </div>
 
-
     <div class="container mt-2">
         <div class="row mt-2">
             <div class="col-md-12">
-                <h2><span class="material-symbols-outlined ms-2" >settings</span> Setting</h2>
+                <h2><span class="material-symbols-outlined ms-2" >person</span> Account IVAO</h2>
             </div>
         </div>
+
+        <div class="row mt-2">
+            <div class="col-md-12">
+                <form action="">
+                    <div class="mb-3">
+                        <label for="vid" class="form-label">Ivao</label>
+                        <input type="text" class="form-control" id="vid" aria-describedby="emailHelp" placeholder="Enter your VID">
+                        <div id="emailHelp" class="form-text">Your vid account from IVAO</div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="password" class="form-label">Password</label>
+                        <input type="password" class="form-control" id="password" placeholder="Enter your password">
+                        <div id="emailHelp" class="form-text">Your password account from IVAO</div>
+                    </div>
+                    <button class="btn btn-success float-end" type="submit">Register VID</button>
+                </form>
+                </div>
+            </div>
+
+    
     </div>
-
-    <div class="container text-center mt-2">
-        <div class="row">
-                <div class="col">
-                   <a href="./data.html"><button class="btn btn-sm btn-primary fs-6"><span class="material-symbols-outlined">database</span> Data</button></a>
-                </div>
-                <div class="col">
-                    <a href="./preference_app/account.html"><button class="btn btn-sm btn-secondary fs-6"><span class="material-symbols-outlined">person</span> Account</button></a>
-                </div>
-                <div class="col">
-                    <a href="#"><button class="btn btn-sm btn-info fs-6" disabled><span class="material-symbols-outlined">lan</span> Serve</button></a>
-                </div>
-            
-        </div>
-    </div>
-
-
-
 </body>
+
 </html>
 
 <script>
-    const package = require('../package.json');
+    const package = require('../../package.json');
     document.getElementById('version').innerText = package.version;
     document.getElementById('type').innerText = package.versionName;
 </script>
