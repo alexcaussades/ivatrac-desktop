@@ -1,7 +1,7 @@
 {
   "name": "ivatrac",
-  "version": "0.1.5",
-  "versionName": "Alapha-V0.1.5",
+  "version": "0.1.6",
+  "versionName": "Alapha-V0.1.6",
   "main": "index.js",
   "scripts": {
     "start": "electron-forge start",
@@ -12,7 +12,6 @@
   },
   "author": "alexandre Caussades",
   "license": "ISC",
-  "description": "",
   "devDependencies": {
     "@electron-forge/cli": "^7.6.0",
     "@electron-forge/maker-deb": "^7.6.0",
@@ -23,6 +22,7 @@
     "@electron-forge/plugin-fuses": "^7.6.0",
     "@electron-forge/publisher-github": "^7.6.0",
     "@electron/fuses": "^1.8.0",
+    "@electron/packager": "^18.3.6",
     "electron": "^33.2.1"
   },
   "dependencies": {

@@ -10,11 +10,9 @@ module.exports = {
     {
       name: '@electron-forge/maker-squirrel',
       config: {
-        name: 'ivao_api',
-        platforms: ['win32'],
-        "setupIcon": "src/assets/icons/icon.ico",
-        "iconUrl": "https://raw.githubusercontent.com/ivao-xg/ivao_api/main/src/assets/icons/icon.ico",
-        "loadingGif": "src/assets/loading.gif" 
+        name: 'Ivatrac-Desktop',
+        description: "Ivatrac desktop version for monitoring the ivao server with flight information, metar, reservations, events, etc.",
+        authors: 'alexcaussades'
       },
     },
     {
